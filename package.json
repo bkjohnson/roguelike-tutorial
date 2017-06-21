@@ -1,0 +1,28 @@
+{
+  "name": "roguelike",
+  "version": "0.0.1",
+  "description": "roguelike tutorial project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkjohnson/roguelikedev-does-the-complete-roguelike-tutorial.git"
+  },
+  "keywords": [
+    "roguelike",
+    "game",
+    "JavaScript",
+    "electron"
+  ],
+  "author": "Brooks Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkjohnson/roguelikedev-does-the-complete-roguelike-tutorial/issues"
+  },
+  "homepage": "https://github.com/bkjohnson/roguelikedev-does-the-complete-roguelike-tutorial#readme",
+  "dependencies": {
+    "electron": "^1.6.11"
+  }
+}
