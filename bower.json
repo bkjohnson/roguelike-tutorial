@@ -1,0 +1,27 @@
+{
+  "name": "roguelike",
+  "description": "roguelike tutorial project",
+  "main": "main.js",
+  "authors": [
+    "Brooks Johnson"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "roguelike",
+    "game",
+    "JavaScript",
+    "electron"
+  ],
+  "homepage": "https://github.com/bkjohnson/roguelikedev-does-the-complete-roguelike-tutorial",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^2.0.1"
+  }
+}

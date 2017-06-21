@@ -1,0 +1,34 @@
+<dom-module id="roguelike-game">
+  <template>
+    <div>
+      <h1>Hello World!</h1>
+      We are using node [[nodeVersion]],
+      Chrome [[chromeVersion]],
+      and Electron[[electronVersion]].
+    </div>
+  </template>
+
+  <script>
+    class RoguelikeGame extends Polymer.Element {
+      static get is() { return "roguelike-game"}
+
+      static get properties() {
+        return {
+          nodeVersion: String,
+          chromeVersion: String,
+          electronVersion: String
+        }
+      }
+
+      ready() {
+        super.ready()
+
+        this.nodeVersion = process.versions.node
+        this.chromeVersion = process.versions.chrome
+        this.electronVersion = process.versions.electron
+      }
+    }
+
+    customElements.define(RoguelikeGame.is, RoguelikeGame);
+  </script>
+</dom-module>
