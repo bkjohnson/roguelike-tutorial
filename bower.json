@@ -22,6 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "^2.0.1"
+    "polymer": "^2.0.1",
+    "rot.js": "^0.6.0"
   }
 }

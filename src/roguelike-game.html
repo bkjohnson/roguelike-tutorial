@@ -1,10 +1,9 @@
+<link rel="import" href="game-dependencies.html">
+
 <dom-module id="roguelike-game">
   <template>
     <div>
-      <h1>Hello World!</h1>
-      We are using node [[nodeVersion]],
-      Chrome [[chromeVersion]],
-      and Electron[[electronVersion]].
+      [[rotSupport]]
     </div>
   </template>
 
@@ -14,18 +13,19 @@
 
       static get properties() {
         return {
-          nodeVersion: String,
-          chromeVersion: String,
-          electronVersion: String
+          rotSupport: String,
         }
       }
 
       ready() {
         super.ready()
 
-        this.nodeVersion = process.versions.node
-        this.chromeVersion = process.versions.chrome
-        this.electronVersion = process.versions.electron
+        if (ROT.isSupported()) {
+          this.rotSupport = "Rot is supported"
+        }
+        else {
+          this.rotSupport = "Rot is not supported"
+        }
       }
     }
 
