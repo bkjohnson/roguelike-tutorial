@@ -18,7 +18,30 @@
         super.ready()
 
         if (ROT.isSupported()) {
+          this.player = new Agent('@', 5, 5)
+
+          document.body.addEventListener("keydown", this.handlePush.bind(this));
+
           this.game = new Game()
+          this.game.addAgent(this.player)
+          this.game.start()
+        }
+      }
+
+      handlePush(e) {
+        switch (e.key) {
+          case "ArrowUp":
+            this.player._y -= 1
+            break
+          case "ArrowDown":
+            this.player._y += 1
+            break
+          case "ArrowLeft":
+            this.player._x -= 1
+            break
+          case "ArrowRight":
+            this.player._x += 1
+            break
         }
       }
     }
