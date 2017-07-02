@@ -2,9 +2,6 @@
 
 <dom-module id="roguelike-game">
   <template>
-    <div>
-      [[rotSupport]]
-    </div>
   </template>
 
   <script>
@@ -21,10 +18,7 @@
         super.ready()
 
         if (ROT.isSupported()) {
-          this.rotSupport = "Rot is supported"
-        }
-        else {
-          this.rotSupport = "Rot is not supported"
+          this.game = new Game()
         }
       }
     }
