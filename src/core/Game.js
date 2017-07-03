@@ -4,12 +4,9 @@ class Game {
     this.agents = []
 
     document.body.appendChild(this.display.getContainer())
-    this.generateChunk()
-  }
 
-  generateChunk() {
-    let chunk = new ROT.Map.Buildings()
-    this.map = chunk.create(this.display.DEBUG)
+    this.chunk = new Chunk()
+    this.chunk.createBuilding()
   }
 
   addAgent(agent) {
@@ -24,15 +21,22 @@ class Game {
   }
 
   updateMap() {
-    let map = this.map._map
+    let map = this.chunk.tiles
     for (let x = 0; x < map.length; x++) {
       for (let y = 0; y < map[x].length; y++) {
-        if (map[x][y] == 1) {
-          this.display.draw( x, y, '=', "#E0E0E0", "#676767")
+        let char = '.'
+        switch(map[x][y]) {
+          case TileType.Ground:
+            char = '.'
+            break
+          case TileType.Wall:
+            char = '#'
+            break
+          case TileType.Floor:
+            char = '*'
         }
-        else {
-          this.display.draw( x, y, '.')
-        }
+
+        this.display.draw( x, y, char)
       }
     }
   }
