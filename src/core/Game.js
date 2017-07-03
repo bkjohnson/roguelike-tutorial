@@ -4,6 +4,12 @@ class Game {
     this.agents = []
 
     document.body.appendChild(this.display.getContainer())
+    this.generateChunk()
+  }
+
+  generateChunk() {
+    let chunk = new ROT.Map.Buildings()
+    chunk.create(this.display.DEBUG)
   }
 
   addAgent(agent) {
