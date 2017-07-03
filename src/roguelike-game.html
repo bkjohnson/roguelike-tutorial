@@ -29,18 +29,27 @@
       }
 
       handlePush(e) {
+        let map = this.game.chunk.tiles
         switch (e.key) {
           case "ArrowUp":
-            this.player._y -= 1
+            if (map[this.player._x][this.player._y - 1] != TileType.Wall) {
+              this.player._y -= 1
+            }
             break
           case "ArrowDown":
-            this.player._y += 1
+            if (map[this.player._x][this.player._y + 1] != TileType.Wall) {
+              this.player._y += 1
+            }
             break
           case "ArrowLeft":
-            this.player._x -= 1
+            if (map[this.player._x - 1][this.player._y] != TileType.Wall) {
+              this.player._x -= 1
+            }
             break
           case "ArrowRight":
-            this.player._x += 1
+            if (map[this.player._x + 1][this.player._y] != TileType.Wall) {
+              this.player._x += 1
+            }
             break
         }
       }
