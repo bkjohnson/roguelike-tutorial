@@ -82,7 +82,7 @@ ROT.Map.Buildings.prototype.create = function(callback) {
 	}
 
 	this._walls = {};
-	this._map = null;
+	// this._map = null;
 
 	return this;
 };
