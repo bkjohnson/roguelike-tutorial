@@ -25,6 +25,32 @@ class Building {
       }
       this.tiles.push(row)
     }
+
+    this.addDoor()
+  }
+
+  addDoor() {
+    let doorDir = Utils.randomNum(0, 4)
+    let doorX = 0,
+        doorY = 0
+
+    switch(doorDir) {
+      case 0:
+        doorX = Utils.randomNum(1, this.width - 1)
+        break
+      case 1:
+        doorX = this.width - 1
+        doorY = Utils.randomNum(1, this.height - 1)
+        break
+      case 2:
+        doorX = Utils.randomNum(1, this.width - 1)
+        doorY = this.height - 1
+        break
+      case 3:
+        doorY = Utils.randomNum(1, this.height - 1)
+    }
+
+    this.tiles[doorX][doorY] = TileType.Floor
   }
 
 }
