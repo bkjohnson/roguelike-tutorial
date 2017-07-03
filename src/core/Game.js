@@ -9,7 +9,7 @@ class Game {
 
   generateChunk() {
     let chunk = new ROT.Map.Buildings()
-    this.map = chunk.create(this.display.DEBUG)._map
+    this.map = chunk.create(this.display.DEBUG)
   }
 
   addAgent(agent) {
@@ -24,10 +24,11 @@ class Game {
   }
 
   updateMap() {
-    for (let x = 0; x < this.map.length; x++) {
-      for (let y = 0; y < this.map[x].length; y++) {
-        if (this.map[x][y] == 1) {
-          this.display.draw( x, y, '=')
+    let map = this.map._map
+    for (let x = 0; x < map.length; x++) {
+      for (let y = 0; y < map[x].length; y++) {
+        if (map[x][y] == 1) {
+          this.display.draw( x, y, '=', "#E0E0E0", "#676767")
         }
         else {
           this.display.draw( x, y, '.')
